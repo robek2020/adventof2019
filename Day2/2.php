@@ -5,6 +5,7 @@ $input = explode(",", file_get_contents('inputs/input.txt'));
 $input[1] = 12;
 $input[2] = 2;
 for ($i = 0; $i < sizeof($input); $i = $i + 4) {
+    echo "<div>Currently processing position " . $i . " with input " . $input[$i] . "</div>";
     if($input[$i] == 1) {
         $input[$i + 3] = $input[$i + 1] + $input[$i + 2];
     } elseif($input[$i] == 2) {
