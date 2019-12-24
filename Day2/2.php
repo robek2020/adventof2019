@@ -1,6 +1,6 @@
 <?php
 
-function runIntcodeFromInput($input, $noun, $verb) {
+function runIntcodeFromInput(&$input, $noun, $verb) {
     $input[1] = $noun;
     $input[2] = $verb;
     for ($i = 0; $i < sizeof($input); $i = $i + 4) {
@@ -15,13 +15,13 @@ function runIntcodeFromInput($input, $noun, $verb) {
             break;
         }
     }
-    return $input;
 }
 
 $input = explode(",", file_get_contents('inputs/input.txt'));
 $inputPart1 = $input;
+runIntcodeFromInput($input, 12, 2);
 
-print_r("Answer 1: " . runIntcodeFromInput($inputPart1, 12, 2)[0] . "\r\n");
+print_r("Answer 1: " . $input[0] . "\r\n");
 
 $input2 = $input;
 
